@@ -1,5 +1,4 @@
 
-
 node {
   def remote = [:]
   remote.name = 'k8s-master'
@@ -8,8 +7,8 @@ node {
   remote.password = 'password'
   remote.allowAnyHosts = true
   stage('Remote SSH') {
-    sshCommand remote: remote, command: " pwd "
     sshCommand remote: remote, command: " git clone https://github.com/Iyadomry/app2.git /root/app2 "
-    sshCommand remote: remote, command: " pwd "
+    sshCommand remote: remote, command: " cd /root/app2"
+    sshCommand remote: remote, command: " docker build -t app2:v1 ."
   }
 }
