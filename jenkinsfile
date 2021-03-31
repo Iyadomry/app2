@@ -13,7 +13,7 @@ node {
   stage('Build Docker Image from Dockerfile') {
     sshCommand remote: remote, command: " docker build -t app2:v1 /root/app2/."
   }
-  stage('last') {
+  stage('Delete the Repo') {
     sshCommand remote: remote, command: " rm -rf app2/ "
   }
 }
