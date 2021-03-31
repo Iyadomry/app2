@@ -8,7 +8,7 @@ node {
   remote.password = 'password'
   remote.allowAnyHosts = true
   stage('Remote SSH') {
-    sshCommand remote: remote, command: "cd app2/app2"
+    sshCommand remote: remote, command: "cd /home/iyadomry/app2/app2 "
     sshCommand remote: remote, command: " pwd "
   }
 }
