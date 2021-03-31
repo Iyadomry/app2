@@ -6,12 +6,14 @@ node {
   remote.user = 'root'
   remote.password = 'password'
   remote.allowAnyHosts = true
-  stage('Remote SSH') {
+  stage('Clone GitHub repo to K8s cluster') {
     sshCommand remote: remote, command: " git clone https://github.com/Iyadomry/app2.git /root/app2 "
     sshCommand remote: remote, command: " cd /root/app2"
+  }  
+  stage('Build Docker Image from Dockerfile') {
     sshCommand remote: remote, command: " docker build -t app2:v1 /root/app2/."
   }
   stage('last') {
     sshCommand remote: remote, command: " rm -rf app2/ "
-   }
+  }
 }
