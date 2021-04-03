@@ -45,7 +45,6 @@ node {
   stage('Remote SSH') {
     sshCommand remote: remote, command: "git clone https://github.com/Iyadomry/app2.git /root/app2"
     sshCommand remote: remote, command: "kubectl apply -f /root/app2/app2.yaml --namespace iyad"
-    sshCommand remote: remote, command: "kubectl rollout restart deployment app2 --namespace iyad"
     sshCommand remote: remote, command: "rm -rf /root/app2/"
   }
 }
