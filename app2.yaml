@@ -23,8 +23,6 @@ spec:
         name: app2
         ports:
         - containerPort: 80  
-        resources: {}
-status: {}
     strategy:
     type: RollingUpdate
     rollingUp      maxSurge: 50%
