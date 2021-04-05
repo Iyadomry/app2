@@ -6,7 +6,7 @@ metadata:
     app: app2
   name: app2
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: app2
@@ -16,13 +16,9 @@ spec:
       creationTimestamp: null
       labels:
         app: app2
-        role: rolling-update
     spec:
       containers:
       - image: iyadomry/app2
         name: app2
-        ports:
-        - containerPort: 80  
-    strategy:
-    type: RollingUpdate
-    rollingUp      maxSurge: 50%
+        resources: {}
+status: {}
