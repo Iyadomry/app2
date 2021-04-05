@@ -16,6 +16,7 @@ spec:
       creationTimestamp: null
       labels:
         app: app2
+        role: rolling-update
     spec:
       containers:
       - image: iyadomry/app2
@@ -24,3 +25,6 @@ spec:
         - containerPort: 80  
         resources: {}
 status: {}
+    strategy:
+    type: RollingUpdate
+    rollingUp      maxSurge: 50%
