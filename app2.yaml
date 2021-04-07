@@ -22,3 +22,16 @@ spec:
         name: app2
         resources: {}
 status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app2
+  labels:
+    run: app2
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: app2
