@@ -22,14 +22,3 @@ spec:
         name: app2
         resources: {}
 status: {}
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: myapprep-lb
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-  selector:
-    app: myapprep
