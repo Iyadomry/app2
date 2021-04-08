@@ -22,3 +22,4 @@ spec:
         name: app2
         resources: {}
 status: {}
+
