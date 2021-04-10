@@ -22,3 +22,4 @@ spec:
         image: iyadomry/app2
         ports:
         - containerPort: 80
+        imagePullPolicy: Always
